@@ -1,0 +1,18 @@
+{
+  "type": "module",
+  "dependencies": {
+    "bedrock-protocol": "^3.48.0",
+    "dotenv": "^17.2.1",
+    "node-fetch": "^3.3.2"
+  },
+  "name": "minecraft_ai_server_js",
+  "version": "1.0.0",
+  "main": "mc_ai_proxy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

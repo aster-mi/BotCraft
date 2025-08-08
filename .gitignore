@@ -1,0 +1,28 @@
+# Node.js dependencies
+node_modules/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Bedrock server binaries and data
+bedrock-server-*/
+
+# Auth cache directories (if used)
+.minecraft-js/
+my-token-cache/
+
+# Compiled output (if ever applicable)
+*.tsbuildinfo
+
+# Shell scripts (optional: if you don't want to track them)
+# *.sh
+
+# vscode settings (optional)
+.vscode/
