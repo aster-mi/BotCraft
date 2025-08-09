@@ -33,8 +33,8 @@ Minecraft Bedrock Edition のプロキシサーバーを操作するためのボ
    GitHub からリポジトリをクローンします。
 
    ```bash
-   git clone <リポジトリのURL>
-   cd minecraft_ai_server_js
+   git clone git@github.com:aster-mi/BotCraft.git
+   cd BotCraft
    ```
 
 3. **依存パッケージのインストール**
