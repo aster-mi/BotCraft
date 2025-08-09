@@ -2,11 +2,11 @@
 
 # ====== CONFIG ======
 ENV_FILE=".env"
-PROXY_SCRIPT="bot.js"
+JS_FILE="bot.js"
 
 # ====== Check ======
-if [ ! -f "$PROXY_SCRIPT" ]; then
-  echo "[ERROR] $PROXY_SCRIPT not found."
+if [ ! -f "$JS_FILE" ]; then
+  echo "[ERROR] $JS_FILE not found."
   exit 1
 fi
 
@@ -17,4 +17,4 @@ fi
 
 # ====== Start Proxy ======
 echo "[INFO] Starting bot.js..."
-node "$PROXY_SCRIPT"
+node "$JS_FILE"
