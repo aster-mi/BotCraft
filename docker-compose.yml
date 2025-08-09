@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  botcraft:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/usr/src/app # ローカルのプロジェクトフォルダをコンテナ内にマウント
+    command: ["node", "bot.js"]
