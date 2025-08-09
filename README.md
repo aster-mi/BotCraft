@@ -50,6 +50,10 @@ Minecraft Bedrock Edition のプロキシサーバーを操作するためのボ
    プロジェクトには `.env` ファイルが必要です。以下の環境変数を設定してください。
 
    ```plaintext
+   OPENROUTER_API_KEY=<OpenRouterより発行したkey>
+   OPENROUTER_MODEL=<OpenRouterにて利用するModelのID>
+   LINE_CHANNEL_ACCESS_TOKEN=<LINE Messaging APIのアクセスkey>
+   LINE_CHANNEL_ID=<LINEの送信先USER/GROUP ID>
    BDS_HOST=<Minecraft Bedrock Serverのホスト>
    BDS_PORT=<Minecraft Bedrock Serverのポート>
    BEDROCK_VERSION=<Minecraft Bedrock Version>
@@ -58,9 +62,13 @@ Minecraft Bedrock Edition のプロキシサーバーを操作するためのボ
    **例**：
 
    ```plaintext
-   BDS_HOST=127.0.0.1
+   OPENROUTER_API_KEY=sk-or-v1-...
+   OPENROUTER_MODEL=openai/gpt-5-chat
+   LINE_CHANNEL_ACCESS_TOKEN=NugDAfWBH...
+   LINE_CHANNEL_ID=Ca3bc...a98a054f2
+   BDS_HOST=192.168.68.68
    BDS_PORT=19132
-   BEDROCK_VERSION=1.19.0
+   BEDROCK_VERSION=1.21.100
    ```
 
 5. **プロジェクトの起動**
