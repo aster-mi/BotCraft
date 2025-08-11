@@ -1,18 +1,41 @@
-version: "3"
+version: "3.9"
+
+x-app: &app
+  build:
+    context: .
+    dockerfile: Dockerfile
+  image: botcraft:dev
+  working_dir: /usr/src/app
+  env_file:
+    - .env
+  volumes:
+    - .:/usr/src/app # コードをマウント（保存→即反映）
+    - node_modules:/usr/src/app/node_modules # node_modules はコンテナ側に確保
+  restart: unless-stopped
 
 services:
-  botcraft:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - .:/usr/src/app # ローカルのプロジェクトフォルダをコンテナ内にマウント
-    command: ["node", "bot.js"]
+  ai-bot:
+    <<: *app
+    container_name: ai-bot
+    env_file:
+      - .env.ai-bot
+    command: ["node", "ai-bot.js"]
+
+  discord-bot:
+    <<: *app
+    container_name: discord-bot
+    env_file:
+      - .env.discord-bot
+    command: ["node", "discord-bot.js"]
+
   dozzle:
     image: amir20/dozzle:latest
     container_name: dozzle
     restart: unless-stopped
     ports:
-      - "80:8080" # 外部80 → Dozzle内部8080
+      - "80:8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
+
+volumes:
+  node_modules:

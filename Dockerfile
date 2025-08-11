@@ -1,17 +1,10 @@
-# 既存のDockerfileにGitインストールを追加
+# Dockerfile
 FROM node:18-alpine
+WORKDIR /usr/src/app
 
-# 必要なパッケージをインストール
-RUN apk add --no-cache bash git g++ cmake make
+# よく使うネイティブビルド系（必要なければ省いてOK）
+RUN apk add --no-cache bash git g++ make cmake
 
-# プロジェクトファイルをコピー
-COPY . /app
-
-# 作業ディレクトリを設定
-WORKDIR /app
-
-# npm install実行
-RUN npm install
-
-# 必要なパッケージを実行
-CMD ["node", "bot.js"]
+# 依存のみ先に入れてビルドキャッシュを効かせる
+COPY package*.json ./
+RUN npm ci

@@ -2,8 +2,8 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-import { fetchAIResponse } from "./aiResponse.js";
-import { muteConsoleLog, print } from "./logger.js";
+import { fetchAIResponse } from "./utils/aiResponse.js";
+import { muteConsoleLog, print } from "./utils/logger.js";
 import sendOrExecute from "./utils/sendOrExecute.js";
 
 const { BDS_HOST, BDS_PORT, BEDROCK_VERSION } = process.env;

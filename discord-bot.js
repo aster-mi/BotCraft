@@ -2,8 +2,8 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-import { muteConsoleLog, print } from "./logger.js";
-import DiscordBridge from "./DiscordBridge.js";
+import { muteConsoleLog, print } from "./utils/logger.js";
+import DiscordBridge from "./utils/DiscordBridge.js";
 import sendOrExecute from "./utils/sendOrExecute.js";
 
 const { BDS_HOST, BDS_PORT, BEDROCK_VERSION, DEFAULT_CHANNEL_ID } = process.env;
