@@ -8,3 +8,11 @@ services:
     volumes:
       - .:/usr/src/app # ローカルのプロジェクトフォルダをコンテナ内にマウント
     command: ["node", "bot.js"]
+  dozzle:
+    image: amir20/dozzle:latest
+    container_name: dozzle
+    restart: unless-stopped
+    ports:
+      - "80:8080" # 外部80 → Dozzle内部8080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
