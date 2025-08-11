@@ -71,6 +71,7 @@ function sendOrExecute(client, text) {
 
   if (msg.startsWith("/")) {
     // コマンドとして実行
+    // うまく動かないので一旦prompt側でdeadLogic化
     client.queue("command_request", {
       command: msg,
       origin: { type: 0, uuid: client.profile?.uuid || "", request_id: "" }, // type=0 は player
