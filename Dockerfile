@@ -8,3 +8,6 @@ RUN apk add --no-cache bash git g++ make cmake
 # 依存のみ先に入れてビルドキャッシュを効かせる
 COPY package*.json ./
 RUN npm ci
+
+# ファイルをimageに含める
+COPY . .
